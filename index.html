@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Amy Fan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="images/pink logo.png" />
+  </head>
+
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo" />
+          <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-text">
+          <p>Computer Science Student</p>
+          <h1>Hi, I'm <span>Amy!</span></h1>
+        </div>
+
+<!-----------  
+        <div class="background-photo">
+          <img src="images/backgroundphoto.png">
+        </div>
+-------->
+        <!----------buttons---------->
+        <div>
+          <a
+            href="https://www.linkedin.com/in/amy-fan-87580b256?trk=people-guest_people_search-card" target="blank"
+            ><button type="button" class="button">LINKEDIN</button></a
+          >
+
+          <a href="images/Amy Fan Resume.jpg"
+            target="blank"><button type="button" class="button">RESUME</button></a
+          >
+
+          <a href="mailto: amytfan@gmail.com"
+            ><button type="button" class="button">CONTACT</button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!----------about---------->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/user.png" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">ABOUT ME</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut rem reprehenderit doloremque quia laudantium, culpa corrupti atque perferendis dicta aliquam natus omnis odio cumque officia molestiae error? Tempora, dolor facere?</p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick="opentab('experience')">Experience</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Web Development</span><br>Web App Development</li>
+                <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+
+                <div class="languages">
+                  <div>
+                    <img src="images/html logo.png">
+                    <li>HTML<br><span>&lt; 1 year</span></li>
+                  </div>
+                  <div>
+                    <img src="images/css logo.png" width="40px">
+                    <li>CSS<br><span>&lt; 1 year</span></li>
+                  </div>
+                  <div>
+                    <img src="images/js logo.png">
+                    <li>JavaScript<br><span>&lt; 1 year</span></li>
+                  </div>
+                  <div>
+                    <img src="images/python logo.png">
+                    <li>Python<br><span>1 year</span></li>
+                  </div>
+                </div>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>2024</span><br>Developed Portfolio Website</li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2022-23</span><br>Portland State University</li>
+                <li><span>2024-Present</span><br>Depaul University</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-----------projects--------->
+
+    <div id="projects">
+      <div class="container">
+        <h1 class="sub-title">PROJECTS</h1>
+        <div class="projects-list">
+          <div>
+            <img src="images/web logo.png">
+            <h2>Portfolio Website</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore suscipit, quam excepturi ad dignissimos fugiat consequuntur dolorem nulla, minus velit quos illo est fuga ea tempora sit tempore necessitatibus voluptate!</p>
+            <a href="#">LEARN MORE</a>
+          </div>
+
+          <div>
+            <img src="images/spotify logo.png">
+            <h2>Spotify Song Recommender</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore suscipit, quam excepturi ad dignissimos fugiat consequuntur dolorem nulla, minus velit quos illo est fuga ea tempora sit tempore necessitatibus voluptate!</p>
+            <a href="#">LEARN MORE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-------------JavaScript---------->
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for(tablink of tablinks) {
+          tablink.classList.remove("active-link")
+        }        
+        for(tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab")
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+
+    </script>
+
+  </body>
+</html>
