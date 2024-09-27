@@ -17,9 +17,15 @@ body {
 #header {
     width: 100;
     height: 100vh;
-    background-image: url(images/background.png); 
-    background-size: cover;
-    background-position: center;
+    background-color: #fef6f6;
+}
+
+.nav-container {
+    padding: 10px 10%;
+    background-color: rgb(255, 255, 255);
+    /*border-bottom: 2px solid #ffa1a1;*/
+    height: 90px;
+    top: 0;
 }
 
 .container {
@@ -37,10 +43,75 @@ nav {
     flex-wrap: wrap;
 }
 
-nav ul li {
+nav .nav-links li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    margin-top: 0;
+}
+
+/* Hamburger Menu */
+
+#ham-nav {
+    display: none;
+}
+
+.ham-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.ham-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.ham-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3 ease-in-out;
+}   
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out; background-color: #fff;
+    padding: 8px 80px;
+}
+
+.menu-links ul {
+    list-style: none;
+}
+
+.menu-links li a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.menu-links.open {
+    max-height: 300px;
+    transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 700px) {
+    #desktop-nav {
+        display: none;
+    }
+    #ham-nav {
+        display: flex;
+    }
 }
 
 nav ul li a {
@@ -66,9 +137,32 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+.header-container {
+    min-height: 80vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.header-container img {
+    width: 350px;
+    border-radius: 50%;
+    box-shadow:0px 0px 8px 8px rgb(212, 151, 151);
+    transition: 0.4s;
+}
+
+.header-container img:hover {
+    box-shadow: 0px 0px 10px 10px rgb(204, 127, 127);
+    transform: scale(1.015);
+}
+
 .header-text {
-    margin-top: 20%;
-    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .header-text h1 {
@@ -76,12 +170,17 @@ nav ul li a:hover::after {
     margin-top: 10px;
 }
 
+.header-text p {
+    font-size: 20px;
+}
+
 .header-text h1 span {
     color: #ffa1a1
 }
 
 .button {
-    margin: 13px;
+    margin-top: 30px;
+    margin-right: 33px;
     background-color: #ffa1a1;
     color: #fff;
     font-size: 15px;
@@ -92,7 +191,8 @@ nav ul li a:hover::after {
 }
 
 .button:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 /*---------about--------*/
@@ -173,6 +273,11 @@ nav ul li a:hover::after {
     display: block;
 }
 
+.tab-contents h1 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
 .languages {
     display: flex;
     align-items: center;
@@ -188,7 +293,7 @@ nav ul li a:hover::after {
 /* -------Projects---------- */
 
 #projects {
-    background-color: #ffeeee;
+    background-color: #fef6f6;
     padding: 30px 0;
 }
 
@@ -200,12 +305,13 @@ nav ul li a:hover::after {
 }
 
 .projects-list div {
-    background: #ffeeee;
+    background: #fef6f6;
     padding: 40px;
     font-size: 13px;
     font-weight: 300px;
     border-radius: 10px;
-    transition: background 0.5s, transform 0.5s;
+    transition: background 0.6s;
+    margin-bottom: 60px;
 }
 
 .projects-list div img {
@@ -214,9 +320,14 @@ nav ul li a:hover::after {
 
 .projects-list div h2 {
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 15px;
     margin-top: 10px;
+}
+
+.projects-list div h3 {
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .projects-list div a {
@@ -225,9 +336,57 @@ nav ul li a:hover::after {
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
+    padding-right: 20px;
 }
 
 .projects-list div:hover {
     background: #fddcdc;
-    transform: translateY(-10px);
+} 
+
+/*-----------footer---------*/
+footer {
+    background-color: #fdacac;
+    padding: 10px;
+    width: 100%;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-icons a {
+    text-decoration: none;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #ffd0d0;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: black;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #ffd0d0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
 }

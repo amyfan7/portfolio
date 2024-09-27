@@ -3,54 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
     <title>Amy Fan</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="images/pink logo.png" />
+    <script src="https://kit.fontawesome.com/15e5b9ef86.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div id="header">
-      <div class="container">
-        <nav>
-          <img src="images/logo.png" class="logo" />
-          <ul>
+      <div class="nav-container">
+        <nav id="desktop-nav">
+          <a href="#header"><img src="images/logo.png" class="logo"/></a>
+          <ul class="nav-links">
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="mailto: filler@gmail.com?subject=Let's Connect!">CONTACT</a></li>
           </ul>
         </nav>
+        <nav id="ham-nav">
+          <a href="#header"><img src="images/logo.png" class="logo"/></a>
+          <div class="ham-menu">
+            <div class="ham-icon" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="menu-links">
+              <ul>
+                <li><a href="#about" onclick="toggleMenu()">ABOUT</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">PROJECTS</a></li>
+                <li><a href="mailto: filler@gmail.com?subject=Let's Connect!" onclick="toggleMenu()">CONTACT</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
 
-        <div class="header-text">
-          <p>Computer Science Student</p>
-          <h1>Hi, I'm <span>Amy!</span></h1>
+      <div class="header-container">
+        <div class="header-content">
+          <div class="header-text">
+            <h1>Hi, I'm <span>Amy!</span></h1>
+            <p>Computer Science Student</p>
+          </div>
+          <div>
+            <a
+              href="https://www.linkedin.com/in/amy-fan-87580b256?trk=people-guest_people_search-card" target="blank"
+              ><button type="button" class="button">LINKEDIN</button></a
+            >
+  
+            <a href="images/Amy Fan Resume.jpg"
+              target="blank"><button type="button" class="button">RESUME</button></a
+            >
+  
+            <a href="mailto: filler@gmail.com?subject=Let's Connect!"
+              ><button type="button" class="button">CONTACT</button></a
+            >
+          </div>
         </div>
-
-<!-----------  
-        <div class="background-photo">
-          <img src="images/backgroundphoto.png">
-        </div>
--------->
-        <!----------buttons---------->
-        <div>
-          <a
-            href="https://www.linkedin.com/in/amy-fan-87580b256?trk=people-guest_people_search-card" target="blank"
-            ><button type="button" class="button">LINKEDIN</button></a
-          >
-
-          <a href="images/Amy Fan Resume.jpg"
-            target="blank"><button type="button" class="button">RESUME</button></a
-          >
-
-          <a href="mailto: amytfan@gmail.com"
-            ><button type="button" class="button">CONTACT</button></a
-          >
-        </div>
+        <img src="images/home pic.png">
       </div>
     </div>
 
@@ -75,6 +89,7 @@
               <ul>
                 <li><span>Web Development</span><br>Web App Development</li>
                 <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                <li><span>API Integration</span><br>API Integration</li>
 
                 <div class="languages">
                   <div>
@@ -98,15 +113,21 @@
             </div>
 
             <div class="tab-contents" id="experience">
+              <h1>Technical Experience</h1>
               <ul>
                 <li><span>2024</span><br>Developed Portfolio Website</li>
+              </ul>
+              <h1>Work Experience</h1>
+              <ul>
+                <li><span>2023-2024</span><br>Licensed Insurance Producer<br><span style="color: black; font-style: italic">American Family Insurance - Jeffrey Fisher Agency</span></li>
+                <li><span>2022-2023</span><br>Salesperson<br><span style="color: black; font-style: italic">Victra</span></li>
               </ul>
             </div>
 
             <div class="tab-contents" id="education">
               <ul>
-                <li><span>2022-23</span><br>Portland State University</li>
-                <li><span>2024-Present</span><br>Depaul University</li>
+                <li><span>2024-Present</span><br>Depaul University<br><span style="color: black; font-style: italic">Bachelor of Science in Computer Science</span></li>
+                <li><span>2022-23</span><br>Portland State University<br><span style="color: black; font-style: italic">Bachelor of Science in Computer Science</span></li>
               </ul>
             </div>
 
@@ -125,22 +146,55 @@
             <img src="images/web logo.png">
             <h2>Portfolio Website</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore suscipit, quam excepturi ad dignissimos fugiat consequuntur dolorem nulla, minus velit quos illo est fuga ea tempora sit tempore necessitatibus voluptate!</p>
-            <a href="#">LEARN MORE</a>
+            <br>
+            <h3>Language(s):</h3>
+            <p>HTML, CSS, JavaScript</p>
+            <a href="https://github.com/amyfan7/portfolio" target="blank">GitHub</a>
           </div>
 
           <div>
             <img src="images/spotify logo.png">
             <h2>Spotify Song Recommender</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore suscipit, quam excepturi ad dignissimos fugiat consequuntur dolorem nulla, minus velit quos illo est fuga ea tempora sit tempore necessitatibus voluptate!</p>
-            <a href="#">LEARN MORE</a>
+            <br>
+            <h3>Language(s):</h3>
+            <p>Python</p>
+            <a href="https://github.com/amyfan7" target="blank">GitHub</a>
+            <a href="#projects">Demo</a>
           </div>
         </div>
       </div>
     </div>
 
 
+    <!-------------footer----------->
+    <footer>
+      <div class="footer-icons">
+        <a href="https://www.linkedin.com/in/amy-fan-87580b256?trk=people-guest_people_search-card" target="blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/amyfan7" target="blank"><i class="fa-brands fa-github"></i></a>
+        <a href="images/Amy Fan Resume.jpg" target="blank"><i class="fa-solid fa-file"></i></a>
+      </div>
+      <div class="footer-nav">
+        <a href="#header">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="mailto: filler@gmail.com?subject=Let's Connect!">CONTACT</a>
+      </div>
+      <div class="footer-bottom">
+        <p><i class="fa-regular fa-copyright"></i> Amy Fan</p>
+      </div>
+    </footer>
+
 <!-------------JavaScript---------->
     <script>
+
+      function toggleMenu() {
+        const menu = document.querySelector(".menu-links");
+        const icon = document.querySelector(".ham-icon");
+        menu.classList.toggle("open")
+        icon.classLIst.toggle("open")
+      }     
+
       var tablinks = document.getElementsByClassName("tab-links");
       var tabcontents = document.getElementsByClassName("tab-contents");
 
